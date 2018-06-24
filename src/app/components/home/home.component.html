@@ -1,3 +1,14 @@
-<p>
-  home works!
-</p>
+<div id="home" class="view">
+  <div class="artists-overview">
+    <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
+    <div class="row">
+      <div *ngFor="let artist of artists; let i = index" class="col-3">
+        <div class="artist">
+          <img src="../../../assets/images/artists/cover/{{artist.picture}}" class="w-100"/>
+          <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
+          <p class="dates">{{ artist.birthDate }} - {{ artist.deathDate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

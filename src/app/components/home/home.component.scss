@@ -1,0 +1,19 @@
+#home {
+  .artists-overview {
+    .artist {
+      h3 {
+        // font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .dates {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        color: darkgrey;
+      }
+    }
+  }
+}
