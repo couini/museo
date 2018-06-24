@@ -1,14 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Injectable} from '@angular/core';
 
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
-})
+@Injectable()
 export class Artist {
-
   id: number;
   name: string;
   firstName: string;
