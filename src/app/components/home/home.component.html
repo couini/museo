@@ -1,27 +1,50 @@
 <div id="home" class="view">
-  <div class="artists-overview">
-    <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
-    <div class="row">
-      <div *ngFor="let artist of artists; let i = index" class="col-3">
-        <div class="artist">
-          <img src="../../../assets/images/artists/cover/{{artist.picture}}" class="w-100"/>
-          <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
-          <p class="dates">{{ artist.birthDate }} - {{ artist.deathDate }}</p>
-        </div><!-- .artist -->
-      </div>
-    </div><!-- .row -->
-  </div><!-- .artists-overview -->
+  <!--
+  <div class="container-fluid p-0">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <img src="../../../assets/images/slide01.jpg" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3>À tous les passionnés d'art</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="../../../assets/images/slide02.jpg" alt="Dali Museum">
+        <div class="carousel-caption">
+          <h3>Visitez les musées du monde entier</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  -->
 
-  <div class="paintings-overview">
-    <h2 class="border-bottom pb-2 mb-4">Oeuvres</h2>
-    <div class="row">
-      <div *ngFor="let artist of artists; let i = index" class="col-3">
-        <div class="artist">
-          <img src="../../../assets/images/artists/cover/{{artist.picture}}" class="w-100"/>
-          <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
-          <p class="dates">{{ artist.birthDate }} - {{ artist.deathDate }}</p>
-        </div><!-- .artist -->
-      </div>
-    </div><!-- .row -->
-  </div><!-- .artists-overview -->
-</div>
+  <div class="container">
+    <div class="artists-overview mt-5">
+      <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
+      <div class="row">
+        <div *ngFor="let artist of artists; let i = index" class="col-3">
+          <div class="artist">
+            <img src="../../../assets/images/artists/cover/{{ artist.picture }}" class="w-100"/>
+            <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
+          </div><!-- .artist -->
+        </div>
+      </div><!-- .row -->
+    </div><!-- .artists-overview -->
+
+    <div class="paintings-overview mt-5">
+      <h2 class="border-bottom pb-2 mb-4">Oeuvres</h2>
+      <div class="row">
+        <div *ngFor="let painting of paintings; let i = index" class="col-3">
+          <div class="artist">
+            <img src="../../../assets/images/paintings/cover/{{ painting.picture }}" class="w-100"/>
+            <h3 class="pt-1 m-0">{{ painting.name }}</h3>
+            <p>{{ painting.artist.firstName }} {{ painting.artist.name }}</p>
+          </div><!-- .painting -->
+        </div>
+      </div><!-- .row -->
+    </div><!-- .paintings-overview -->
+  </div><!-- .container -->
+
+</div><!-- #home -->
