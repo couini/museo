@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   getArtists() {
     this.artistService.getArtists().subscribe(
       (artists: Artist[]) => {
+        console.log(artists);
         // Get only the first four artists of the list
         this.artists = _.slice(artists, 0, 4);
       }

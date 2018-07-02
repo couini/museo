@@ -20,20 +20,35 @@
     }
   }
 
-  .artists-overview,
-  .paintings-overview {
-      h3 {
-        // font-family: 'Montserrat', sans-serif;
-        font-size: 19px;
-        font-weight: normal;
-        text-transform: uppercase;
-      }
+  .overview {
 
-      p {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 12px;
-        font-weight: normal;
-        color: darkgrey;
-      }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      color: darkgrey;
+      margin: 0;
+    }
+  }
+
+  .museum-overview {
+    #clipped {
+      width: 760px;
+      clip-path: url(#clipPolygon);
+    }
   }
 }
