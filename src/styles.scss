@@ -5,20 +5,19 @@
   padding: 0;
 }
 
+body {
+  line-height: 1;
+}
+
 a {
   text-decoration: none;
   color: black;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+p {
+  margin: 0 !important;
 }
 
-.navbar {
-  .navbar-brand {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: lowercase;
-    font-size: 1.9em;
-    font-weight: bold;
-  }
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
 }

@@ -19,30 +19,34 @@
   </div>
 
   <div class="container">
-    <div class="artists-overview mt-5">
-      <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
+    <div class="artists-overview overview mt-5">
+      <h2 class="border-bottom">Artistes</h2>
       <div class="row">
         <div *ngFor="let artist of artists; let i = index" class="col-3">
           <div class="artist">
             <img src="../../../assets/images/artists/cover/{{ artist.picture }}" class="w-100"/>
-            <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
+            <h3>{{ artist.firstName }} {{ artist.name }}</h3>
           </div><!-- .artist -->
         </div>
       </div><!-- .row -->
     </div><!-- .artists-overview -->
 
-    <div class="paintings-overview mt-5">
-      <h2 class="border-bottom pb-2 mb-4">Oeuvres</h2>
+    <div class="paintings-overview overview mt-5">
+      <h2 class="border-bottom">Oeuvres</h2>
       <div class="row">
         <div *ngFor="let painting of paintings; let i = index" class="col-3">
           <div class="artist">
             <img src="../../../assets/images/paintings/cover/{{ painting.picture }}" class="w-100"/>
-            <h3 class="pt-1 m-0">{{ painting.name }}</h3>
+            <h3>{{ painting.name }}</h3>
             <p>{{ painting.artist.firstName }} {{ painting.artist.name }}</p>
           </div><!-- .painting -->
         </div>
       </div><!-- .row -->
     </div><!-- .paintings-overview -->
+
+    <div class="museums-overview overview mt-5">
+      <h2 class="border-bottom pb-2 mb-4">Visitez les musées du monde entier</h2>
+    </div><!-- .museums-overview -->
   </div><!-- .container -->
 
 </div><!-- #home -->
