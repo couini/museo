@@ -49,11 +49,11 @@
     <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
     <div class="row">
       <div class="cover col-md-6 pl-0">
-        <img src="../../../assets/images/cities/paris.jpg" alt="city picture" />
+        <img src="../../../assets/images/cities/{{ city?.picture }}" alt="{{ city?.name }} picture" />
       </div>
       <div class="description col-md-6 pl-0">
-        <h3>Paris</h3>
-        <p>et ses 120 musées</p>
+        <h3>{{ city?.name }}</h3>
+        <p>et ses {{ city?.museums.length }} musées</p>
       </div>
     </div>
   </div><!-- .museums-overview -->

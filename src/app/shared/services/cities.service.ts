@@ -3,6 +3,8 @@ import {Observable} from 'rxjs/internal/Observable';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 
+import {City} from '../models/city';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +16,7 @@ export class CitiesService {
     private httpClient: HttpClient
   ) { }
 
-  getMuseums(): Observable<Museum> {
-    return this.httpClient.get<Museum[]>(this.apiUrl + '/cities');
+  getCities(): Observable<City[]> {
+    return this.httpClient.get<City[]>(this.apiUrl + '/cities');
   }
 }
