@@ -22,10 +22,10 @@
     <div class="artists-overview overview mt-5">
       <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
       <div class="row">
-        <div *ngFor="let artist of artists; let i = index" class="col-3">
+        <div *ngFor="let artist of artists; let i = index" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="artist">
             <img src="../../../assets/images/artists/cover/{{ artist.picture }}" class="w-100"/>
-            <h3 class="pt-1 m-0">{{ artist.firstName }} {{ artist.name }}</h3>
+            <h3 class="pt-1 mb-1 mb-2">{{ artist.firstName }} {{ artist.name }}</h3>
           </div><!-- .artist -->
         </div>
       </div><!-- .row -->
@@ -34,7 +34,7 @@
     <div class="paintings-overview overview mt-5">
       <h2 class="border-bottom pb-2 mb-4">Oeuvres</h2>
       <div class="row">
-        <div *ngFor="let painting of paintings; let i = index" class="col-3">
+        <div *ngFor="let painting of paintings; let i = index" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="artist">
             <img src="../../../assets/images/paintings/cover/{{ painting.picture }}" class="w-100"/>
             <h3 class="pt-1 m-0">{{ painting.name }}</h3>
@@ -47,15 +47,19 @@
 
   <div class="museums-overview overview mt-5 pl-0 pr-0 container-fluid">
     <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
-    <div class="row">
-      <div class="cover col-md-6 pl-0">
+    <div #grid class="grid" *ngFor="let museum of museums" data-packery-options='{ "itemSelector": ".grid-item" }'>
+      <div class="grid-item grid-item--width2">{{ museum.picture }}</div>
+    </div>
+
+    <!--<div class="row">
+      <div class="cover col-md-6 col-sm-12 col-xs-12 pl-0">
         <img src="../../../assets/images/cities/{{ city?.picture }}" alt="{{ city?.name }} picture" />
       </div>
-      <div class="description col-md-6 pl-0">
+      <div class="description col-md-6 col-sm-12 col-xs-12 pl-0">
         <h3>{{ city?.name }}</h3>
         <p>et ses {{ city?.museums.length }} musées</p>
       </div>
-    </div>
+    </div>-->
   </div><!-- .museums-overview -->
 
 </div><!-- #home -->
