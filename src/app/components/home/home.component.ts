@@ -1,6 +1,5 @@
-import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
-import Packery from 'packery';
 
 import {ArtistsService} from '../../shared/services/artists.service';
 import {PaintingsService} from '../../shared/services/paintings.service';
@@ -17,8 +16,7 @@ import {Museum} from '../../shared/models/museum';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  @ViewChild('grid') grid;
+export class HomeComponent implements OnInit {
 
   artists: Artist[] = [];
   paintings: Painting[] = [];
@@ -37,14 +35,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.getPaintings();
     this.getRandomCity();
     this.getMuseums();
-  }
-
-  ngAfterViewInit() {
-    /*let packery = new Packery(this.grid.nativeElement, {
-      itemSelector: '.grid-item'
-    });*/
-
-    console.log(this.grid);
   }
 
   getArtists() {

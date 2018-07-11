@@ -45,21 +45,20 @@
     </div><!-- .paintings-overview -->
   </div><!-- .container -->
 
-  <div class="museums-overview overview mt-5 pl-0 pr-0 container-fluid">
+  <div class="museums-overview overview mt-5 mb-5 pl-0 pr-0 container-fluid">
     <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
-    <div #grid class="grid" *ngFor="let museum of museums" data-packery-options='{ "itemSelector": ".grid-item" }'>
-      <div class="grid-item grid-item--width2">{{ museum.picture }}</div>
-    </div>
-
-    <!--<div class="row">
+    <div class="row">
       <div class="cover col-md-6 col-sm-12 col-xs-12 pl-0">
         <img src="../../../assets/images/cities/{{ city?.picture }}" alt="{{ city?.name }} picture" />
       </div>
       <div class="description col-md-6 col-sm-12 col-xs-12 pl-0">
-        <h3>{{ city?.name }}</h3>
-        <p>et ses {{ city?.museums.length }} musées</p>
+        <div class="centered">
+          <h3>{{ city?.name }}</h3>
+          <p>et ses {{ city?.museums.length }} musées</p>
+        </div>
+
       </div>
-    </div>-->
+    </div>
   </div><!-- .museums-overview -->
 
 </div><!-- #home -->
