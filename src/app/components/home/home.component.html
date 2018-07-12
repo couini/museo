@@ -28,12 +28,13 @@
             <h3 class="pt-1 mb-1 mb-2">{{ artist.firstName }} {{ artist.name }}</h3>
           </div><!-- .artist -->
         </div>
+        <a routerLink="/artists" title="Voir tous les artistes" class="view-all col-12">Voir tous les artistes</a>
       </div><!-- .row -->
     </div><!-- .artists-overview -->
 
     <div class="paintings-overview overview mt-5">
       <h2 class="border-bottom pb-2 mb-4">Oeuvres</h2>
-      <div class="row">
+      <div class="row mb-2">
         <div *ngFor="let painting of paintings; let i = index" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
           <div class="artist">
             <img src="../../../assets/images/paintings/cover/{{ painting.picture }}" class="w-100"/>
@@ -41,24 +42,18 @@
             <p>{{ painting.artist.firstName }} {{ painting.artist.name }}</p>
           </div><!-- .painting -->
         </div>
+        <a routerLink="/paintings" title="Voir toutes les oeuvres" class="view-all col-12">Voir toutes les oeuvres</a>
       </div><!-- .row -->
     </div><!-- .paintings-overview -->
   </div><!-- .container -->
 
-  <div class="museums-overview overview mt-5 mb-5 pl-0 pr-0 container-fluid">
+  <div class="museums-overview overview mt-5 mb-5 pl-0 pr-0 container">
     <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
-    <div class="row">
-      <div class="cover col-md-6 col-sm-12 col-xs-12 pl-0">
-        <img src="../../../assets/images/cities/{{ city?.picture }}" alt="{{ city?.name }} picture" />
+    <masonry [options]="options" [useImagesLoaded]="true">
+      <div masonry-brick class="masonry-brick" *ngFor="let museum of museums">
+        <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}" style="width:100%;">
       </div>
-      <div class="description col-md-6 col-sm-12 col-xs-12 pl-0">
-        <div class="centered">
-          <h3>{{ city?.name }}</h3>
-          <p>et ses {{ city?.museums.length }} musées</p>
-        </div>
-
-      </div>
-    </div>
+    </masonry>
   </div><!-- .museums-overview -->
 
 </div><!-- #home -->

@@ -31,8 +31,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
-              "node_modules/packery/dist/packery.pkgd.js"
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
             ]
           },
           "configurations": {
