@@ -7,8 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdCardModule } from '@angular2-material/card';
-import { MasonryModule } from 'angular2-masonry';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { MasonryModule } from 'angular2-masonry';
     NgbModule.forRoot(),
     HttpClientModule,
     BrowserAnimationsModule,
-    MasonryModule,
-    MdCardModule
+    NgxMasonryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

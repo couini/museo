@@ -10,8 +10,8 @@ import {Artist} from '../../shared/models/artist';
 import {Painting} from '../../shared/models/painting';
 import {City} from '../../shared/models/city';
 import {Museum} from '../../shared/models/museum';
-import {AngularMasonry} from 'angular2-masonry/src/masonry';
-import {MasonryOptions} from 'angular2-masonry/src/masonry-options';
+
+import { NgxMasonryOptions as MasonryOptions } from 'ngx-masonry';
 
 @Component({
   selector: 'app-home',
@@ -20,15 +20,14 @@ import {MasonryOptions} from 'angular2-masonry/src/masonry-options';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(AngularMasonry) masonry: AngularMasonry;
-
   artists: Artist[] = [];
   paintings: Painting[] = [];
   city: City;
   museums: Museum[] = [];
 
-  options: MasonryOptions = {
-    transitionDuration: '0.3s'
+  public options: MasonryOptions = {
+    transitionDuration: '0.8s',
+    gutter: 15
   };
 
   constructor(
@@ -46,9 +45,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.masonry.layoutComplete.subscribe(() => {
-      console.log('layout');
-    });
   }
 
   getArtists() {

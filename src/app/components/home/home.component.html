@@ -49,11 +49,16 @@
 
   <div class="museums-overview overview mt-5 mb-5 pl-0 pr-0 container">
     <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
-    <masonry [options]="options" [useImagesLoaded]="true">
+    <ngx-masonry [useImagesLoaded]="true" [options]="options">
+      <ngxMasonryItem class="museum-item" *ngFor="let museum of museums">
+        <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}" style="width:100%;">
+      </ngxMasonryItem>
+    </ngx-masonry>
+    <!--<masonry [options]="options" [useImagesLoaded]="true">
       <div masonry-brick class="masonry-brick" *ngFor="let museum of museums">
         <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}" style="width:100%;">
       </div>
-    </masonry>
+    </masonry>-->
   </div><!-- .museums-overview -->
 
 </div><!-- #home -->
