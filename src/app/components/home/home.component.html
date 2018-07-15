@@ -23,10 +23,12 @@
       <h2 class="border-bottom pb-2 mb-4">Artistes</h2>
       <div class="row">
         <div *ngFor="let artist of artists; let i = index" class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-          <div class="artist">
-            <img src="../../../assets/images/artists/cover/{{ artist.picture }}" class="w-100"/>
-            <h3 class="pt-1 mb-1 mb-2">{{ artist.firstName }} {{ artist.name }}</h3>
-          </div><!-- .artist -->
+          <a routerLink="/artists/{{artist.id}}">
+            <div class="artist">
+              <img src="../../../assets/images/artists/cover/{{ artist.picture }}" class="w-100"/>
+              <h3 class="pt-1 mb-1 mb-2">{{ artist.firstName }} {{ artist.name }}</h3>
+            </div><!-- .artist -->
+          </a>
         </div>
         <a routerLink="/artists" title="Voir tous les artistes" class="view-all col-12">Voir tous les artistes</a>
       </div><!-- .row -->
