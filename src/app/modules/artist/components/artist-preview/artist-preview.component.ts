@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NgxMasonryOptions as MasonryOptions } from 'ngx-masonry';
 
 import { ArtistsService } from '../../../../shared/services/artists.service';
 import { Artist } from '../../../../shared/models/artist';
@@ -13,6 +14,11 @@ export class ArtistPreviewComponent implements OnInit {
 
   artistId: number;
   artist: Artist;
+
+  public options: MasonryOptions = {
+    transitionDuration: '0.8s',
+    gutter: 15
+  };
 
   constructor(
     private route: ActivatedRoute,

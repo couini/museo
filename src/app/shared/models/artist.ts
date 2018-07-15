@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Painting} from './painting';
 
 @Injectable()
 export class Artist {
@@ -11,6 +12,7 @@ export class Artist {
   birthPlace: string;
   deathPlace: string;
   picture: string;
+  paintings: Painting[];
 
   constructor(obj?: any) {
     this.id = obj && Number(obj.id) || null;
@@ -21,6 +23,6 @@ export class Artist {
     this.deathDate = obj && obj.deathDate || null;
     this.birthPlace = obj && obj.birthPlace || null;
     this.deathPlace = obj && obj.deathPlace || null;
-    this.picture = obj && obj.picture || null;
+    this.paintings = (obj && obj.paintings) ? obj.paintings.map(painting => new Painting(painting)) : [];
   }
 }
