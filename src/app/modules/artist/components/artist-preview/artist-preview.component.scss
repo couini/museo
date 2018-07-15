@@ -1,0 +1,26 @@
+.artist-details {
+  margin-top: 50px;
+
+  .name {
+    text-align: center;
+    margin: 0;
+  }
+
+  .dates {
+    text-align: center;
+    color: lighten(#999, 10%);
+    margin-bottom: 30px;
+  }
+
+  .biography {
+    text-align: justify;
+    width: 80%;
+    margin: 30px auto;
+    font-size: 13px;
+  }
+
+  hr {
+    border: 3px solid #000;
+    margin: 0 auto;
+  }
+}

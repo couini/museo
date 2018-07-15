@@ -1,3 +1,13 @@
-<p>
-  artist-preview works!
-</p>
+<div class="container artist-details" *ngIf="artist">
+  <div class="row">
+    <div class="col-md-5">
+      <img src="../../../assets/images/artists/{{ artist.picture }}" class="w-100"/>
+    </div>
+    <div class="col-md-7">
+      <h2 class="name">{{ artist.firstName }} {{ artist.name }}</h2>
+      <p class="dates">({{ artist.birthDate }} - {{ artist.deathDate }})</p>
+      <hr width="10%">
+      <p class="biography">{{ artist.biography }}</p>
+    </div>
+  </div>
+</div>
