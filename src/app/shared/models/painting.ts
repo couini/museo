@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Artist} from './artist';
+import {Movement} from './movement';
 
 @Injectable()
 export class Painting {
@@ -10,6 +11,7 @@ export class Painting {
   technique: string;
   picture: string;
   artist: Artist;
+  movements: Movement[];
 
   constructor(obj?: any) {
     this.id = obj && Number(obj.id) || null;
@@ -19,5 +21,6 @@ export class Painting {
     this.technique = obj && obj.technique || null;
     this.picture = obj && obj.picture || null;
     this.artist = obj && obj.artist || new Artist();
+    this.movements = (obj && obj.movements) ? obj.movements.map(movement => new Movement(movement)) : [];
   }
 }
