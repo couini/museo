@@ -61,4 +61,24 @@
     </div><!-- .museums-overview -->
   </div><!-- .container -->
 
+  <div class="posts mt-5 container-fluid">
+    <div class="posts-content container">
+      <div class="row">
+        <ng-container *ngFor="let post of posts">
+          <div class="col-md-3">
+            {{ post.title }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <ngx-masonry class="gallery" [useImagesLoaded]="true" [options]="options">
+      <ngxMasonryItem class="gallery-item" *ngFor="let museum of museums">
+        <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}">
+      </ngxMasonryItem>
+    </ngx-masonry>
+  </div>
+
 </div><!-- #home -->
