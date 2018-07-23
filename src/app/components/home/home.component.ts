@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   public options: MasonryOptions = {
     transitionDuration: '0.8s',
-    gutter: 15
+    gutter: 15,
   };
 
   constructor(

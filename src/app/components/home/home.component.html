@@ -1,21 +1,12 @@
 <div id="home" class="view">
   <div class="container-fluid p-0">
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <img src="../../../assets/images/slide01.jpg" alt="Random first slide">
-        <div class="carousel-caption">
-          <h3>À tous les passionnés d'art</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="../../../assets/images/slide02.jpg" alt="Dali Museum">
-        <div class="carousel-caption">
-          <h3>Visitez les musées du monde entier</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </ng-template>
-    </ngb-carousel>
+    <div class="banner">
+      <img src="../../../assets/images/slide01.jpg" alt="Random first slide">
+      <div class="intro">
+        <h3>À tous les passionnés d'art</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -30,7 +21,9 @@
             </div><!-- .artist -->
           </a>
         </div>
-        <a routerLink="/artists" title="Voir tous les artistes" class="view-all col-12">Voir tous les artistes</a>
+        <div class="col-md-5">
+          <a routerLink="/artists" title="Voir tous les artistes" class="view-all">Voir tous les artistes <i class="fas fa-arrow-right arrow"></i></a>
+        </div>
       </div><!-- .row -->
     </div><!-- .artists-overview -->
 
@@ -44,7 +37,9 @@
             <p>{{ painting.artist.firstName }} {{ painting.artist.name }}</p>
           </div><!-- .painting -->
         </div>
-        <a routerLink="/paintings" title="Voir toutes les oeuvres" class="view-all col-12">Voir toutes les oeuvres</a>
+        <div class="col-md-5">
+          <a routerLink="/paintings" title="Voir toutes les oeuvres" class="view-all">Voir toutes les oeuvres <i class="fas fa-arrow-right arrow"></i></a>
+        </div>
       </div><!-- .row -->
     </div><!-- .paintings-overview -->
 
@@ -59,26 +54,70 @@
         </ngxMasonryItem>
       </ngx-masonry>
     </div><!-- .museums-overview -->
-  </div><!-- .container -->
 
-  <div class="posts mt-5 container-fluid">
-    <div class="posts-content container">
-      <div class="row">
-        <ng-container *ngFor="let post of posts">
-          <div class="col-md-3">
-            {{ post.title }}
-          </div>
-        </ng-container>
+    <div class="quote row">
+      <div class="quote-img col-md-9">
+        <img src="../../../assets/images/paintings/st-jerome-ecrivant.jpg" alt="La Grande Jatte" />
+      </div>
+      <div class="quote-content">
+        <h3>" Je crois que l'art est la seule forme d'activité par laquelle l'homme en tant que tel se manifeste comme véritable individu. Par elle seule, il peut dépasser le stade animal,
+          parce que l'art est un débouché sur des régions où ne domine ni le temps, ni l'espace. "</h3>
+        <p>Marcel Duchamp</p>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <ngx-masonry class="gallery" [useImagesLoaded]="true" [options]="options">
-      <ngxMasonryItem class="gallery-item" *ngFor="let museum of museums">
-        <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}">
-      </ngxMasonryItem>
-    </ngx-masonry>
-  </div>
+    <div class="movements mt-5">
+      <h2 class="text-center border-bottom">Explorer</h2>
+      <div class="movement col-md-18">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../../../assets/images/movements/cover/cubisme.jpg" alt="Le Cubisme">
+          </div>
+          <div class="col-md-6">
+            <h4>Le Cubisme</h4>
+            <span class="period">(1904 – 1921)</span>
+            <p class="description">Le cubisme est un mouvement artistique du début du xxe siècle. Les artistes cubistes proposent de représenter les objets
+              et les corps en les décomposant par formes géométriques simples, en multipliant les angles de vision du sujet représenté.
+              Ils représentent peu de courbes. Il n'y a pas d'effet de perspective.</p>
+            <a routerLink="/movements/3" title="Voir le mouvement cubiste">Découvrir <i class="fas fa-arrow-right arrow"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="movement col-md-18">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>La Renaissance</h4>
+            <span class="period">(1300 – 1600)</span>
+            <p class="description">La Renaissance est une grande période de rénovation culturelle qui s’est produite dans l’Europe des XVème et XVème siècles,
+              dans les domaines des idées, de la littérature, des arts et des sciences, d’une part, mais, bien sûr, aussi dans ceux de
+              l’économie et du social, et créa une onde de choc dans les sphères du religieux et du politique.</p>
+            <a routerLink="/movements/3" title="Voir le mouvement de la Renaissance">Découvrir <i class="fas fa-arrow-right arrow"></i></a>
+          </div>
+          <div class="col-md-6">
+            <img src="../../../assets/images/movements/cover/renaissance.jpg" alt="La Renaissance">
+          </div>
+        </div>
+      </div>
+      <div class="movement col-md-18">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="../../../assets/images/movements/cover/dadaisme.jpg" alt="Le Dadaïsme">
+          </div>
+          <div class="col-md-6">
+            <h4>Le Dadaïsme</h4>
+            <span class="period">(1916 – 1923)</span>
+            <p class="description">L'art Dada (mot tiré dans le dictionnaire, ne signifie rien) est un mouvement artistique apparu vers le début du XXème siècle
+              après la Première Guerre mondiale. Il se caractérisa par une remise en cause de tous les principes et contraintes idéologiques, artistiques et politiques.
+              Les artistes qui en faisaient partie ont été traumatisés par les atrocités de cette guerre. Ils ont alors voulu dénoncer toutes les valeurs de la société
+              telle qu'elle existait avant le conflit: la logique, le sérieux par exemple.</p>
+            <a routerLink="/movements/3" title="Voir le mouvement Dada">Découvrir <i class="fas fa-arrow-right arrow"></i></a>
+          </div>
+        </div>
+      </div>
+      <a routerLink="/movements" title="Voir tous les mouvements" class="view-all">Voir tous les mouvements <i class="fas fa-arrow-right arrow"></i></a>
+    </div>
+
+  </div><!-- .container -->
 
 </div><!-- #home -->
