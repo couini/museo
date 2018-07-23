@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 
 import {ArtistsService} from '../../shared/services/artists.service';

@@ -1,0 +1,29 @@
+<div class="container artist-details" *ngIf="artist">
+  <div class="row">
+    <div class="col-md-5">
+      <img src="../../../assets/images/artists/{{ artist.picture }}" class="w-100"/>
+    </div>
+    <div class="col-md-7">
+      <h2 class="artist-name">{{ artist.firstName }} {{ artist.name }}</h2>
+      <p class="dates">({{ artist.birthDate }} - {{ artist.deathDate }})</p>
+      <hr class="border" width="10%">
+      <p class="biography">{{ artist.biography }}</p>
+    </div>
+  </div>
+
+  <div class="paintings">
+    <h2>Oeuvres</h2>
+    <hr width="60%">
+    <div class="filter">
+        <button type="button" (click)="displayAll()">Afficher tout</button>
+        <button type="button" *ngFor="let movement of movements" data-value="{{ movement.name }}" (click)="filter = movement" [class.active]="filter === movement">{{ movement.name }}</button>
+    </div>
+    <ngx-masonry class="paintings-grid" [useImagesLoaded]="true" [options]="options">
+      <ngxMasonryItem class="painting-item" *ngFor="let painting of paintings">
+        <img *ngIf="painting.picture" src="../../../assets/images/paintings/{{ painting?.picture }}">
+        <h3 class="painting-name">{{ painting.name }}</h3>
+        <p class="date">{{ painting.year }}</p>
+      </ngxMasonryItem>
+    </ngx-masonry>
+  </div>
+</div>

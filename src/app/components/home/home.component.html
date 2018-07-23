@@ -49,7 +49,7 @@
     </div><!-- .paintings-overview -->
 
     <div class="museums-overview overview mt-5 mb-5 pl-0 pr-0">
-      <h2 class="border-bottom pb-2 mb-4 container">Visitez les musées du monde entier</h2>
+      <h2 class="border-bottom pb-2 mb-4">Visitez les musées du monde entier</h2>
       <ngx-masonry class="museums-grid" [useImagesLoaded]="true" [options]="options">
         <ngxMasonryItem class="museum-item" *ngFor="let museum of museums">
           <img *ngIf="museum.picture" src="../../../assets/images/museums/{{ museum?.picture }}">

@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ArtistModule } from './modules/artist/artist.module';
+import { SharedModule } from './shared/shared.module';
+import { NgxMasonryModule } from 'ngx-masonry';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxMasonryModule } from 'ngx-masonry';
+
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { NgxMasonryModule } from 'ngx-masonry';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxMasonryModule,
     NgbModule.forRoot(),
-    HttpClientModule,
-    BrowserAnimationsModule,
-    NgxMasonryModule
+    SharedModule,
+    ArtistModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -22,28 +22,28 @@
   }
 
   .overview {
-      h2 {
-        font-family: 'Montserrat', sans-serif;
-        text-transform: uppercase;
-        font-size: 18px;
-        line-height: 2;
-        margin-bottom: 20px;
-      }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
 
-      h3 {
-        font-family: 'Playfair Display', sans-serif;
-        font-weight: normal;
-        text-transform: uppercase;
-        font-size: 18px;
-        margin-top: 5px;
-      }
+    h3 {
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin-top: 5px;
+    }
 
-      p {
-        font-family: 'Open Sans', sans-serif;
-        font-size: 12px;
-        font-weight: normal;
-        color: darkgrey;
-      }
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      color: darkgrey;
+    }
 
     a {
       margin-top: 5px;
@@ -76,7 +76,7 @@
 
         h3 {
           font-style: italic;
-          font-size: 40px;
+          font-size: 30px;
           line-height: 1;
           margin: 0;
         }
@@ -113,32 +113,47 @@
 
       .museum-name {
         color: white;
-        font-size: 40px;
+        font-size: 30px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
-        line-height: 1;
-        font-family: "Playfair Display", serif;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #000;
+
+        .museum-name {
+          color: white;
+          font-size: 40px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          text-align: center;
+          line-height: 1;
+          font-family: "Playfair Display", serif;
+        }
+      }
+
+      &:hover .overlay {
+        opacity: 0.9;
       }
     }
 
-    &:hover .overlay {
-      opacity: 0.9;
-    }
-  }
+    .gallery {
+      .gallery-item {
+        margin-bottom: 15px;
+        width: 350px;
 
-  .gallery {
-    .gallery-item {
-      margin-bottom: 15px;
-      width: 350px;
-
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
