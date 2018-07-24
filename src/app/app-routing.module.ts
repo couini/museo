@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
-import { ArtistPreviewComponent } from './modules/artist/components/artist-preview/artist-preview.component';
+import { ArtistPreviewComponent } from './modules/artist/artist-preview/artist-preview.component';
+import { MovementsComponent } from './modules/movement/movements/movements.component';
 
 const routes: Routes = [
   {
@@ -10,8 +11,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'artist/:id',
+    path: 'artists/:id',
     component: ArtistPreviewComponent
+  },
+  {
+    path: 'movements',
+    component: MovementsComponent
   }
 ];
 

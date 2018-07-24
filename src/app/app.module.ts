@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMasonryModule } from 'ngx-masonry';
+
 import { ArtistModule } from './modules/artist/artist.module';
+import { MovementModule } from './modules/movement/movement.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -23,7 +25,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxMasonryModule,
-    ArtistModule
+    ArtistModule,
+    MovementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

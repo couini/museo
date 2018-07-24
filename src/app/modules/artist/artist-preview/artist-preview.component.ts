@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxMasonryOptions as MasonryOptions } from 'ngx-masonry';
 
-import { ArtistsService } from '../../../../shared/services/artists.service';
-import { Artist } from '../../../../shared/models/artist';
+import { ArtistsService } from '../../../shared/services/artists.service';
+import { Artist } from '../../../shared/models/artist';
 
 @Component({
   selector: 'app-artist-preview',
