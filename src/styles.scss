@@ -39,3 +39,15 @@ h1, h2, h3, h4 {
     font-weight: bold;
   }
 }
+
+.page-title {
+  display: flex;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  height: 200px;
+
+  h1 {
+    align-self: flex-end;
+    margin: 0 auto;
+  }
+}
