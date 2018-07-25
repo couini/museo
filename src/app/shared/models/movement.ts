@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { City } from './city';
+import {Injectable} from '@angular/core';
 
 @Injectable()
-export class Museum {
+export class Movement {
   id: number;
   name: string;
-  address: string;
+  period: string;
+  description: string;
   picture: string;
-  city: City;
 
   constructor(obj?: any) {
     this.id = obj && Number(obj.id) || null;
     this.name = obj && obj.name || null;
-    this.address = obj && obj.address || null;
+    this.period = obj && obj.period || null;
+    this.description = obj && obj.description || null;
     this.picture = obj && obj.picture || null;
-    this.city = obj && obj.city || new City();
   }
 }
