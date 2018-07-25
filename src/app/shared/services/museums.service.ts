@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {environment} from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/internal/Observable';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 
-import {Museum} from '../models/museum';
+import { Museum } from '../models/museum';
 
 @Injectable({
   providedIn: 'root'
