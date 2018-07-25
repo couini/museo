@@ -1,10 +1,10 @@
-<div id="movements" class="view container-fluid m-0">
+<div id="movements" class="view container-fluid pl-5 pr-5">
   <div class="page-title col-md-2 offset-1">
     <h1>Mouvements</h1>
   </div>
   <ul class="movements-list row">
-    <li class="col-md-4" *ngFor="let movement of movements">
-      {{ movement.name }}
+    <li class="movement-item col-md-4" *ngFor="let movement of movements">
+      <img src="../../../assets/images/movements/{{ movement.picture }}" class="w-100"/>
     </li>
   </ul>
 </div>
