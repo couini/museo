@@ -1,0 +1,13 @@
+#movements {
+  .movements-list {
+    .movement-item {
+      margin-bottom: 30px;
+      height: 400px;
+
+      img {
+        object-fit: cover;
+        height: 400px;
+      }
+    }
+  }
+}
