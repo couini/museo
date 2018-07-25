@@ -12,6 +12,8 @@ import {City} from '../../shared/models/city';
 import {Museum} from '../../shared/models/museum';
 
 import { NgxMasonryOptions as MasonryOptions } from 'ngx-masonry';
+import {PostsService} from '../../shared/services/posts.service';
+import {Post} from '../../shared/models/post';
 
 @Component({
   selector: 'app-home',
@@ -24,17 +26,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   paintings: Painting[] = [];
   city: City;
   museums: Museum[] = [];
+  posts: Post[] = [];
 
   public options: MasonryOptions = {
     transitionDuration: '0.8s',
-    gutter: 15
+    gutter: 15,
   };
 
   constructor(
     private artistService: ArtistsService,
     private paintingService: PaintingsService,
     private cityService: CitiesService,
-    private museumService: MuseumsService
+    private museumService: MuseumsService,
+    private postService: PostsService
   ) { }
 
   ngOnInit() {
@@ -42,6 +46,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.getPaintings();
     this.getRandomCity();
     this.getMuseums();
+    this.getPosts();
   }
 
   ngAfterViewInit() {
@@ -74,7 +79,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   getMuseums() {
     this.museumService.getMuseums().subscribe((museums: Museum[]) => {
       this.museums = museums;
-      console.log(this.museums);
+    });
+  }
+
+  getPosts() {
+    this.postService.getPosts().subscribe((posts: Post[]) => {
+      this.posts = _.slice(posts, 0, 3);
+      console.log(this.posts);
     });
   }
 
