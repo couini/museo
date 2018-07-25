@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Movement } from '../../../shared/models/movement';
+import {MovementsService} from '../../../shared/services/movements.service';
+
 @Component({
   selector: 'app-movements',
   templateUrl: './movements.component.html',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovementsComponent implements OnInit {
 
-  constructor() { }
+  movements: Movement[] = [];
+
+  constructor(
+    private movementService: MovementsService
+  ) { }
 
   ngOnInit() {
+    this.getAllMovements();
+  }
+
+  getAllMovements() {
+    this.movementService.getMovements().subscribe((movements: Movement[]) => {
+      this.movements = movements;
+    });
   }
 
 }
