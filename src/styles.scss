@@ -46,13 +46,21 @@ li {
 }
 
 .page-title {
-  display: flex;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  position: relative;
   height: 200px;
 
   h1 {
-    align-self: flex-end;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 50px;
+    position: absolute;
+    bottom: 35px;
     margin: 0 auto;
+    text-align: center;
+    display: block;
+    left: 0;
+    right: 0;
   }
 }
