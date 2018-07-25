@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Movement } from '../../../shared/models/movement';
-import {MovementsService} from '../../../shared/services/movements.service';
+import { MovementsService } from '../../../shared/services/movements.service';
 
 @Component({
   selector: 'app-movements',
@@ -23,6 +22,7 @@ export class MovementsComponent implements OnInit {
   getAllMovements() {
     this.movementService.getMovements().subscribe((movements: Movement[]) => {
       this.movements = movements;
+      console.log(this.movements);
     });
   }
 
