@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { NgxMasonryOptions as MasonryOptions } from 'ngx-masonry';
 import * as _ from 'lodash';
 
-import { ArtistsService } from '../../../../shared/services/artists.service';
-import { Artist } from '../../../../shared/models/artist';
-import {Movement} from '../../../../shared/models/movement';
-import {Painting} from '../../../../shared/models/painting';
+import { ArtistsService } from '../../../shared/services/artists.service';
+import { Artist } from '../../../shared/models/artist';
+import { Movement } from '../../../shared/models/movement';
+import { Painting } from '../../../shared/models/painting';
 
 @Component({
   selector: 'app-artist-preview',
@@ -18,10 +18,7 @@ export class ArtistPreviewComponent implements OnInit {
   artistId: number;
   artist: Artist;
   paintings: Painting[] = [];
-  displayedPaintings = [];
   movements: Movement[] = [];
-  displayedMovements: Movement[] = [];
-  toggle = false;
 
   public options: MasonryOptions = {
     transitionDuration: '0.8s',

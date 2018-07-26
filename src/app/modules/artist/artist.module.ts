@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { SharedModule } from '../../shared/shared.module';
 
-import { ArtistPreviewComponent } from './components/artist-preview/artist-preview.component';
+import { ArtistPreviewComponent } from './artist-preview/artist-preview.component';
 
 @NgModule({
   imports: [

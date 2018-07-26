@@ -28,18 +28,13 @@ p {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
-ul {
-  margin: 0;
-
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
 }
 
-// Navbar
 .navbar {
   border-bottom: 1px solid #000;
   .navbar-brand {
@@ -47,5 +42,25 @@ ul {
     text-transform: lowercase;
     font-size: 1.9em;
     font-weight: bold;
+  }
+}
+
+.page-title {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  position: relative;
+  height: 200px;
+
+  h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 50px;
+    position: absolute;
+    bottom: 35px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    left: 0;
+    right: 0;
   }
 }

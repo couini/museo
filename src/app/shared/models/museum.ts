@@ -1,5 +1,5 @@
+import { Injectable } from '@angular/core';
 import { City } from './city';
-import {Injectable} from '@angular/core';
 
 @Injectable()
 export class Museum {
