@@ -12,17 +12,26 @@ export class MovementsService {
 
   apiUrl = environment.apiUrl;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
   getMovements(): Observable<Movement[]> {
     return this.httpClient.get<Movement[]>(this.apiUrl + '/movements')
       .pipe(
         map((response: Movement[]) => {
-          const movements: Movement[] = response.map((movement: Movement) => {
+          return response.map((movement: Movement) => {
             return new Movement(movement);
           });
+        })
+      );
+  }
 
-          return movements;
+  show(id: number): Observable<Movement> {
+    return this.httpClient.get<Movement>(this.apiUrl + '/movements/' + id)
+      .pipe(
+        map((movement: Movement) => {
+          return new Movement(movement);
         })
       );
   }

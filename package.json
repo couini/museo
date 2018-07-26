@@ -31,6 +31,7 @@
     "lodash": "^4.17.10",
     "ngx-masonry": "^1.1.2",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
