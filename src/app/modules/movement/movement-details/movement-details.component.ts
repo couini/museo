@@ -1,8 +1,11 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import * as _ from 'lodash';
 
 import { Movement } from '../../../shared/models/movement';
 import { MovementsService } from '../../../shared/services/movements.service';
+import { Painting } from '../../../shared/models/painting';
+import { Artist } from '../../../shared/models/artist';
 
 @Component({
   selector: 'app-movement-details',
@@ -13,6 +16,8 @@ export class MovementDetailsComponent implements OnInit, AfterViewInit {
 
   movement: Movement;
   movementId: number;
+  paintings: Painting[] = [];
+  artists: Artist[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +41,14 @@ export class MovementDetailsComponent implements OnInit, AfterViewInit {
   getMovement() {
     this.movementService.show(this.movementId).subscribe((movement: Movement) => {
       this.movement = movement;
-      console.log(this.movement);
+
+      this.paintings = movement.paintings;
+
+      _.forEach(this.movement.paintings, (painting: Painting) => {
+        const artists = painting.artist;
+        this.artists.push(artists);
+        console.log(this.artists);
+      });
     });
   }
 

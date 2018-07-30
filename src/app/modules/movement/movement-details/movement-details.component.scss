@@ -1,0 +1,18 @@
+.grid {
+  .item {
+    figure {
+      figcaption {
+        h2 {
+          text-transform: inherit;
+        }
+
+        p {
+          font-family: 'Montserrat', Arial, sans-serif;
+          text-transform: uppercase;
+          font-weight: 300;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
