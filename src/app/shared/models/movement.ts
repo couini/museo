@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+
 import { Painting } from './painting';
+import { Artist } from './artist';
 
 @Injectable()
 export class Movement {
@@ -11,6 +13,7 @@ export class Movement {
   period: string;
   chronology: string;
   paintings: Painting[];
+  artists: Artist[];
 
   constructor(obj?: any) {
     this.id = obj && Number(obj.id) || null;
@@ -21,5 +24,6 @@ export class Movement {
     this.period = obj && obj.period || null;
     this.chronology = obj && obj.chronology || null;
     this.paintings = (obj && obj.paintings) ? obj.paintings.map(painting => new Painting(painting)) : [];
+    this.artists = (obj && obj.artists) ? obj.artists.map(artist => new Artist(artist)) : [];
   }
 }

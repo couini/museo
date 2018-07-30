@@ -1,17 +1,37 @@
-.grid {
-  .item {
-    figure {
-      figcaption {
-        h2 {
-          text-transform: inherit;
-        }
+#movement {
+  .grid {
+    .item {
+      figure {
+        figcaption {
+          h2 {
+            text-transform: inherit;
+          }
 
-        p {
-          font-family: 'Montserrat', Arial, sans-serif;
-          text-transform: uppercase;
-          font-weight: 300;
-          font-size: 15px;
+          p {
+            font-family: 'Montserrat', Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 15px;
+          }
         }
+      }
+    }
+  }
+
+  .artists-list {
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .row {
+      margin-bottom: 10px;
+
+      img {
+        border-radius: 100%;
+        height: 74px;
+        object-fit: cover;
       }
     }
   }

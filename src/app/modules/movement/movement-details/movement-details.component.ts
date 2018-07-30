@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import * as _ from 'lodash';
 
 import { Movement } from '../../../shared/models/movement';
 import { MovementsService } from '../../../shared/services/movements.service';
@@ -12,7 +11,7 @@ import { Artist } from '../../../shared/models/artist';
   templateUrl: './movement-details.component.html',
   styleUrls: ['./movement-details.component.scss']
 })
-export class MovementDetailsComponent implements OnInit, AfterViewInit {
+export class MovementDetailsComponent implements OnInit {
 
   movement: Movement;
   movementId: number;
@@ -34,21 +33,14 @@ export class MovementDetailsComponent implements OnInit, AfterViewInit {
     this.getMovement();
   }
 
-  ngAfterViewInit() {
-
-  }
-
   getMovement() {
     this.movementService.show(this.movementId).subscribe((movement: Movement) => {
       this.movement = movement;
 
-      this.paintings = movement.paintings;
+      this.paintings = movement.paintings; // Get the related paintings to the movement
+      this.artists = movement.artists; // Get the related artists to the movement
 
-      _.forEach(this.movement.paintings, (painting: Painting) => {
-        const artists = painting.artist;
-        this.artists.push(artists);
-        console.log(this.artists);
-      });
+      console.log(this.artists);
     });
   }
 

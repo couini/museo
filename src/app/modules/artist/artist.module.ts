@@ -12,6 +12,7 @@ import { ArtistPreviewComponent } from './artist-preview/artist-preview.componen
     SharedModule
   ],
   declarations: [ArtistPreviewComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
+  exports: []
 })
 export class ArtistModule { }
