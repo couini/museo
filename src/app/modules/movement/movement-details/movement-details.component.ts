@@ -39,8 +39,6 @@ export class MovementDetailsComponent implements OnInit {
 
       this.paintings = movement.paintings; // Get the related paintings to the movement
       this.artists = movement.artists; // Get the related artists to the movement
-
-      console.log(this.artists);
     });
   }
 

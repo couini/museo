@@ -3,7 +3,7 @@
     <h1>{{ movement.name }}</h1>
   </div>
   <div class="row">
-    <div class="gallery grid col-md-12 col-xl-10">
+    <div class="gallery grid col-lg-12 col-xl-10">
       <div class="row">
         <div class="item col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let painting of paintings">
           <figure class="hover-effect">
@@ -18,13 +18,13 @@
         </div>
       </div>
     </div>
-    <div class="artists-list col-md-12 col-xl-2">
+    <div class="artists-list col-lg-12 col-xl-2">
       <h3>Artistes majeurs</h3>
+      <hr width="40%" style="margin: 0 auto;"/>
       <ul>
         <li *ngFor="let artist of artists" class="row">
-          <div class="col-md-4">
-            <img src="../../../assets/images/artists/{{ artist.picture }}" class="w-100"/>
-          </div>
+          <img src="../../../assets/images/artists/{{ artist.picture }}" alt="{{ artist.firstName }} {{ artist.name }}"/>
+          <p>{{ artist.firstName }} {{ artist.name }}</p>
         </li>
       </ul>
     </div>
