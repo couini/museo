@@ -3,15 +3,17 @@
     <h1>Mouvements</h1>
   </div>
   <div class="grid row">
-    <div class="item col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let movement of movements">
-      <figure class="hover-effect">
-        <img src="../../../assets/images/movements/{{ movement.picture }}" class="w-100"/>
-        <figcaption>
-          <div>
-            <h2>{{ movement.name }}</h2>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
+    <ng-container *ngFor="let movement of movements">
+      <div class="item col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngIf="!movement.parent">
+          <figure class="hover-effect">
+            <img src="../../../assets/images/movements/{{ movement.picture }}" class="w-100"/>
+            <figcaption>
+              <div>
+                <h2>{{ movement.name }}</h2>
+              </div>
+            </figcaption>
+          </figure>
+      </div>
+    </ng-container>
   </div>
 </div>
