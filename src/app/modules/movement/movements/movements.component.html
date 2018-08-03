@@ -8,8 +8,22 @@
           <figure class="hover-effect">
             <img src="../../../assets/images/movements/{{ movement.picture }}" class="w-100"/>
             <figcaption>
-              <div>
-                <h2>{{ movement.name }}</h2>
+              <div class="movement-infos">
+                <!--<i class="fas fa-bars movements-menu" *ngIf="movement.children"></i>-->
+                <div ngbDropdown class="d-inline-block" *ngIf="movement.children">
+                  <i class="fas fa-bars movements-menu" id="dropdown-toggle" ngbDropdownToggle></i>
+                  <ul ngbDropdownMenu aria-labelledby="dropdown-toggle">
+                    <li *ngFor="let children of movement.children">
+                      <a routerLink="/movements/{{children.id}}" title="{{ children.name }}">{{ children.name }}</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="title">
+                  <a routerLink="/movements/{{movement.id}}" title="{{ movement.name }}">
+                    <h2>{{ movement.name }}</h2>
+                    <p>{{ movement.dates }}</p>
+                  </a>
+                </div>
               </div>
             </figcaption>
           </figure>

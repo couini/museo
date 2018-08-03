@@ -25,16 +25,25 @@ export class MovementsComponent implements OnInit {
     this.movementService.getMovements().subscribe((movements: Movement[]) => {
 
       _.forEach(movements, (movement: Movement, index) => {
-        // Check if a movement has a movement parent
+
+        // Check if a movement has a movement parent or children
         const noParent = !_.isEmpty(movement.parent);
+        const noChildren = !_.isEmpty(movement.children);
 
         // If a movement has no parent, remove the parent property
         if (!noParent) {
           delete movement.parent;
         }
+
+        // If a movement has no children, remove the children property
+        if (!noChildren) {
+          delete movement.children;
+        }
       });
 
       this.movements = movements;
+
+      console.log(this.movements);
 
     });
   }

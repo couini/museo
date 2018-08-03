@@ -5,17 +5,19 @@ import {City} from './city';
 export class Movement {
   id: number;
   name: string;
-  period: string;
+  dates: string;
   description: string;
   picture: string;
-  parent: any[];
+  parent: any;
+  children; any;
 
   constructor(obj?: any) {
     this.id = obj && Number(obj.id) || null;
     this.name = obj && obj.name || null;
-    this.period = obj && obj.period || null;
+    this.dates = obj && obj.dates || null;
     this.description = obj && obj.description || null;
     this.picture = obj && obj.picture || null;
     this.parent = obj && obj.parent || [];
+    this.children = obj && obj.children || [];
   }
 }
