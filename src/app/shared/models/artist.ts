@@ -23,6 +23,7 @@ export class Artist {
     this.biography = obj && obj.biography || null;
     this.birthDate = obj && obj.birthDate || null;
     this.deathDate = obj && obj.deathDate || null;
+    this.picture = obj && obj.picture || null;
     this.birthPlace = obj && obj.birthPlace || null;
     this.deathPlace = obj && obj.deathPlace || null;
     this.paintings = (obj && obj.paintings) ? obj.paintings.map(painting => new Painting(painting)) : [];

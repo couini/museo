@@ -1,0 +1,8 @@
+<ngx-masonry class="grid" [useImagesLoaded]="true" [options]="options">
+  <ngxMasonryItem class="item" *ngFor="let item of data">
+    <img *ngIf="item.picture" src="../../../assets/images/{{ type }}/{{ item?.picture }}">
+    <div class="overlay">
+      <div class="item-name">{{ item.name }}</div>
+    </div>
+  </ngxMasonryItem>
+</ngx-masonry>

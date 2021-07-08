@@ -78,14 +78,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   getMuseums() {
     this.museumService.getMuseums().subscribe((museums: Museum[]) => {
-      this.museums = museums;
+      this.museums = _.slice(museums, 0, 11);
     });
   }
 
   getPosts() {
     this.postService.getPosts().subscribe((posts: Post[]) => {
       this.posts = _.slice(posts, 0, 3);
-      console.log(this.posts);
     });
   }
 
